@@ -14,7 +14,7 @@ PRODUCT= ompSobel ompSobelSingleFile
 
 HFILES=
 MPIFILES= 
-CFILES= ompSobel.cpp ompSobelSingleFile.cpp
+CFILES= ompSobel.cpp ompSobelSingleFile.c
 
 SRCS= ${HFILES} ${CFILES}
 OBJS= ${CFILES:.c=.o}
@@ -28,5 +28,5 @@ clean:
 ompSobel: ompSobel.cpp
 	$(CXX) $(CFLAGS) -o $@ ompSobel.cpp $(LIB_DIRS) -lm
 
-ompSobelSingleFile: ompSobelSingleFile.cpp
-	$(CXX) $(CFLAGS) -o $@ ompSobelSingleFile.cpp $(LIB_DIRS) -lm
+ompSobelSingleFile: ompSobelSingleFile.c
+	$(CC) $(CFLAGS) -o $@ ompSobelSingleFile.c $(LIB_DIRS) -lm
